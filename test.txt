@@ -1,0 +1,109 @@
+This is a test statement for learning git
+
+git add test.txt
+1. git이 관리하도록 파일(test.txt) 추가
+2. 버전 관리 중인 파일(test.txt)이 변경 되었을때 사용
+
+git config --global user.name '이름'
+git confi --globall user.emal '이메일'
+최초 1번, commi에남을 ngit ame과 이메일 설정
+
+git commit  
+버전 만들기(commit) 후 vim으로 commit 메시지 입력
+
+git log 
+commit 내용 확인
+
+git log -p
+commit 간에 파일의 바뀐 내용을 보여줌
+
+※로그 읽는법
++: 추가 또는 바뀐 내용
+-: 이전 내용
+
++++ b/test2.txt 파일 추가됨
+--- /dev/null 파일 없음
+
+
+git log a24944a9c41cbd5d64189e16d7f2911c447d1e8a (commit id)
+해당 commit을 포함한 이전 commit 내용만 보여줌
+
+git diff 커밋ID1..커밋ID2
+commit 간의 소스코드 차이를 보여줌
+
+
+eset VS revert(커밋 취소 및 되돌리기)
+------------------------------------
+git reset 커밋ID --hard
+
+원격 저장소에는 reset을 사용하면 안된다. 왜?
+reset 옵션?
+
+git revert 
+
+
+GIT 매뉴얼 사용하기
+----------------------
+git commit --help
+
+git commit -am "커밋메세지"  -> git add, commit, 커밋 메세지 입력을 한번에
+
+
+branch
+----------
+-브랜치 확인
+git branch
+
+-브랜치 생성
+git branch test_1
+
+-브랜치 선택
+git checkout test_1
+
+-브랜치 간에 차이 확인
+git log master..test_1 -p
+git diff master..test_1
+
+-git log 브랜치 출력
+git log --branches --decorate --graph (--oneline)
+
+merge
+------
+-브랜치 병합(master에 test_1을 가져와서 병합)
+git checkout master
+git merge test_1
+
+-fast-forward
+커밋을 생성하지 않는다.
+
+-3wayMerge
+커밋 내용이 다른 두 브랜치를 병합하는 방법, 새로운 커밋 생성
+
+git checkout -b test_2   -> test_2 브랜치를 생성하고 체크아웃한다.
+git branch -d test_2  -> test_2 브랜치를 삭제한다.
+
+
+stash
+-----
+작업 내용을 commit 대신 임시로 저장할때 사용, 작업 내용의 인덱스가 체크아웃 중인 브랜치에 저장됨
+
+git add
+git stash
+git stash apply 임시 저장한 작업 내용을 다시 불러옴
+git stash drop 삭제
+git stash pop  -> apply & drop
+
+
+git bash에서 소스트리 사용하기
+--------------------------
+stree   -> 현재 프로젝트의 버전 관리를 소스트리에서 보여줌  
+
+
+-------------------------
+$ git bash(linux?) 명령어
+-------------------------
+$ pwd -> 현재 폴더 위치 확인
+$ cd 
+$ mkdir 
+$ ls
+$ ls -al
