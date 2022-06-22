@@ -30,3 +30,59 @@ git config --global user.email "your_email@example.com"
 // 설정한 내용을 확인할 수 있다.
 git config --list
 
+
+// a.html 파일만 추가
+git add a.html
+ 
+// 워킹 디렉터리 내 모든 파일을 추가
+git add .
+ 
+// 명령 프롬프트에서 상호작용하면서 추가 (나갈땐 q를 입력)
+git add -i
+ 
+// 진행중인 파일일 경우, Staging Area에서 워킹 디렉터리로 옮겨온다. 
+$git rm --cached a.html
+$git rm -r --cached .
+
+-----------
+git commit
+-----------
+준비영역(Staging Area)의 파일을 로컬저장소에 저장한다.
+
+// 에디터가 출력되고, 에디터에서 커밋 메시지 입력 후 저장하면 커밋됨
+git commit
+ 
+// 간단한 커밋 메시지를 입력후 커밋
+git commit -m "커밋 메시지"
+ 
+// Staging Area에 들어간 파일에 대해서만 (워킹 디렉터리는 적용 X)
+git commit -a -m "커밋 메시지"
+
+--------
+git log
+--------
+로컬저장소의 커밋 이력을 조회한다.
+
+// 커밋 이력 상세조회
+git log 
+ 
+// 커밋 이력중 커밋ID, 타이틀 메시지만 조회
+git log --oneline
+ 
+// 모든 브랜치 커밋 이력 조회
+git log --oneline --decorate --graph --all
+ 
+// 특정 파일의 변경 커밋 조회
+git log -- a.html
+
+
+----------
+git remote
+----------
+로컬저장소와 원격저장소를 연결한다.
+
+// Github 원격저장소와 연결한다.
+git remote add origin [자신의 Github 원격저장소 주소]
+ 
+// 연결된 원격저장소 확인한다.
+git remote -v
