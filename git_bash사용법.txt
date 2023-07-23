@@ -29,6 +29,7 @@ git config --global user.email "your_email@example.com"
  
 // 설정한 내용을 확인할 수 있다.
 git config --list
+// 내용을 확인 후 터미널로 나오려면 'q' 누름
 
 
 // a.html 파일만 추가
