@@ -5,8 +5,8 @@ git add test.txt
 2. 버전 관리 중인 파일(test.txt)이 변경 되었을때 사용
 
 git config --global user.name '이름'
-git confi --globall user.emal '이메일'
-최초 1번, commi에남을 ngit ame과 이메일 설정
+git config --globall user.emal '이메일'
+최초 1번, commit에 남을 이름과 이메일 설정
 
 git commit  
 버전 만들기(commit) 후 vim으로 commit 메시지 입력
